@@ -3,7 +3,11 @@ from django.db import models
 # Create your models here.
 class user(models.Model):
     username = models.CharField(max_length=20,unique=True)
-
+    name = models.CharField(max_length=128)
+    email = models.EmailField()
+    address = models.TextField()
+    phone_number = models.IntegerField()
+    
 
     def __str__(self):
         return f"{self.id} {self.username}"
@@ -15,6 +19,8 @@ class building(models.Model):
     name = models.CharField(max_length=128)
     latitude = models.FloatField()
     longitude = models.FloatField()
+    address = models.CharField(max_length=512)
+    email = models.CharField(max_length=256)
 
 
     def __str__(self):
