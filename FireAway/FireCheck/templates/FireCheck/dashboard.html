@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% load static %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire by Codevators</title>
+    <!-- Bootstrap Styles-->
+    <link href={% static "/css/bootstrap.css" %} rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href={% static "/css/font-awesome.css" %} rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href={% static "/js/morris/morris-0.4.3.min.css" %} rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href={% static "/css/custom-styles.css" %} rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+
+                <a class="navbar-brand" href="/"><i class="fa fa-fire"></i> <strong>FireAway</strong></a>
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <!-- /.dropdown -->
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+
+                        <li><a href="/"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Dashboard <small>Summary of all Fire Sensors</small>
+                        </h1>
+
+                    </div>
+                </div>
+
+
+                <!-- /. ROW  -->
+
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-green green">
+                            <div class="panel-left pull-left green">
+                                <a href="table.html"><i class="fa fa-globe fa-5x"></i></a>
+
+                            </div>
+                            <div class="panel-right">
+								<h3>8,457</h3>
+                               <strong> Total Number Of Fire Sensors</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-blue">
+                              <div class="panel-left pull-left blue">
+                                <a href="table.html"><i class="fa fa-check fa-5x"></i></a>
+								</div>
+
+                            <div class="panel-right">
+							<h3>52,160 </h3>
+                               <strong> Operating Sensors</strong>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-red">
+                            <div class="panel-left pull-left red">
+                                <a href="table.html"><i class="fa fa fa-fire-extinguisher fa-5x"></i></a>
+
+                            </div>
+                            <div class="panel-right">
+							 <h3>15,823 </h3>
+                               <strong> Sensors Detecting a Fire </strong>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-brown">
+                            <div class="panel-left pull-left brown">
+                                <a href="table.html"><i class="fa fa-exclamation-triangle fa-5x"></i></a>
+
+                            </div>
+                            <div class="panel-right">
+							<h3>36,752 </h3>
+                             <strong>Faulty Sensors</strong>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+				<div class="row">
+				<div class="col-md-6">
+						<div class="panel panel-default">
+						<div class="panel-heading">
+							Area Chart
+						</div>
+						<div class="panel-body">
+							<img src={% static "/images/chartbar.png" %}>
+						</div>
+					</div>
+					</div>
+
+						<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							Line Chart
+						</div>
+						<div class="panel-body">
+							<div >
+                                <img src={% static "/images/chartbar.png" %}>
+                            </div>
+						</div>
+					</div>
+					</div>
+
+				</div>
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Bar Chart Example
+                            </div>
+                            <div class="panel-body">
+                                <img src={% static "/images/chartbar.png" %}>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Donut Chart Example
+                            </div>
+                            <div class="panel-body">
+                                <img src={% static "/images/chartbar.png" %}>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+				<div class="row">
+				<div class="col-md-12">
+
+					</div>
+				</div>
+                <!-- /. ROW  -->
+
+
+
+
+
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+
+
+	<script src="assets/js/easypiechart.js"></script>
+	<script src="assets/js/easypiechart-data.js"></script>
+
+	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+
+
+</body>
+
+</html>

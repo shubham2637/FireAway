@@ -17,7 +17,7 @@ def index(request):
     context = {
 
     }
-    return render(request, "FireCheck/home.html", context)
+    return render(request, "FireCheck/dashboard.html", context)
 
 def device_list(request):
     context= {
