@@ -25,12 +25,54 @@ def index(request):
     }
     return render(request, "FireCheck/dashboard.html", context)
 
+def device_details(request, did):
+    context= {
+        "d" : device.objects.get(pk=did)
+    }
+    return render(request, "FireCheck/device_details.html", context)
+
+
+def zone_details(request, zid):
+    zo=zone.objects.get(pk=zid)
+    context= {
+        "z" : zone.objects.get(pk=zid),
+        "d" : device.objects.filter(zone=zo),
+        "dc":device.objects.filter(zone=zo).count(),
+    }
+    return render(request, "FireCheck/zone_details.html", context)
+
+def building_details(request, bid):
+    bo=building.objects.get(pk=bid)
+    context= {
+        "b" : building.objects.get(pk=bid),
+        "d" : device.objects.filter(building=bo),
+        "dc":device.objects.filter(building=bo).count(),
+        "z" : zone.objects.filter(building=bo),
+        "zc":zone.objects.filter(building=bo).count(),
+        "p" : panel.objects.filter(building=bo),
+        "pc":panel.objects.filter(building=bo).count(),
+    }
+    return render(request, "FireCheck/building_details.html", context)
+
+def panel_details(request, pid):
+    po=panel.objects.get(pk=pid)
+    context= {
+        "p" : panel.objects.get(pk=pid),
+        "d" : device.objects.filter(panel=po),
+        "dc":device.objects.filter(panel=po).count(),
+        "z" : zone.objects.filter(panel=po),
+        "zc":zone.objects.filter(panel=po).count(),
+    }
+    return render(request, "FireCheck/panel_details.html", context)
+
+
+
+
 def device_list(request):
     context= {
         "devices" : device.objects.all()
     }
     return render(request, "FireCheck/table.html", context)
-
 
 def red_device_list(request):
     context= {
