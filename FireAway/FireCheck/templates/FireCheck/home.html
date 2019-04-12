@@ -1,13 +1,19 @@
 {% extends 'FireCheck/base.html' %}
 
-{% block title %}Home{% endblock %}
-
+{% block title %}Dashboard{% endblock %}
+<div class="col-md-12" padding-top:50px>
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
+
+
+  {% if user.is_authenticated %}
+  <h1 class="page-header" align="center"  >Hi {{ user.username }}!</h1>
   <p><a href="{% url 'logout' %}">logout</a></p>
+</div>
 {% else %}
+<div class="col-md-12">
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a>
+
 {% endif %}
 {% endblock %}
+</div>

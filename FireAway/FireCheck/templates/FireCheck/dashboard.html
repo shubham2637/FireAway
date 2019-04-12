@@ -66,11 +66,11 @@
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel panel-primary text-center no-boder bg-color-green green">
                             <div class="panel-left pull-left green">
-                                <a href="table.html"><i class="fa fa-globe fa-5x"></i></a>
+                                <a href="devicelist"><i class="fa fa-globe fa-5x"></i></a>
 
                             </div>
                             <div class="panel-right">
-								<h3>8,457</h3>
+								<h3>{{td}}</h3>
                                <strong> Total Number Of Fire Sensors</strong>
                             </div>
                         </div>
@@ -78,11 +78,11 @@
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel panel-primary text-center no-boder bg-color-blue">
                               <div class="panel-left pull-left blue">
-                                <a href="table.html"><i class="fa fa-check fa-5x"></i></a>
+                                <a href="greendevicelist"><i class="fa fa-check fa-5x"></i></a>
 								</div>
 
                             <div class="panel-right">
-							<h3>52,160 </h3>
+							<h3>{{gd}} </h3>
                                <strong> Operating Sensors</strong>
 
                             </div>
@@ -91,11 +91,11 @@
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel panel-primary text-center no-boder bg-color-red">
                             <div class="panel-left pull-left red">
-                                <a href="table.html"><i class="fa fa fa-fire-extinguisher fa-5x"></i></a>
+                                <a href="reddevicelist"><i class="fa fa fa-fire-extinguisher fa-5x"></i></a>
 
                             </div>
                             <div class="panel-right">
-							 <h3>15,823 </h3>
+							 <h3>{{rd}} </h3>
                                <strong> Sensors Detecting a Fire </strong>
 
                             </div>
@@ -104,11 +104,11 @@
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel panel-primary text-center no-boder bg-color-brown">
                             <div class="panel-left pull-left brown">
-                                <a href="table.html"><i class="fa fa-exclamation-triangle fa-5x"></i></a>
+                                <a href="yellowdevicelist"><i class="fa fa-exclamation-triangle fa-5x"></i></a>
 
                             </div>
                             <div class="panel-right">
-							<h3>36,752 </h3>
+							<h3>{{yd}} </h3>
                              <strong>Faulty Sensors</strong>
 
                             </div>
@@ -191,24 +191,24 @@
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src={% static "/js/jquery-1.10.2.js" %}></script>
     <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src={% static "/js/bootstrap.min.js" %}></script>
 
     <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src={% static "/js/jquery.metisMenu.js" %}></script>
     <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
+    <script src={% static "/js/morris/raphael-2.1.0.min.js" %}></script>
+    <script src={% static "/js/morris/morris.js" %}></script>
 
 
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
+	<script src={% static "/js/easypiechart.js" %}></script>
+	<script src={% static "/js/easypiechart-data.js" %}></script>
 
-	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	 <script src={% static "/js/Lightweight-Chart/jquery.chart.js" %}></script>
 
     <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script>
+    <script src={% static "/js/custom-scripts.js" %}></script>
 
 
 </body>

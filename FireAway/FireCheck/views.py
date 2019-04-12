@@ -15,6 +15,12 @@ def create(request):
 
 def index(request):
     context = {
+        "buildings" : building.objects.all(),
+        "devices" : device.objects.all(),
+        "td" : device.objects.all().count(),
+        "gd" : device.objects.filter(health='G').count(),
+        "rd" : device.objects.filter(health='R').count(),
+        "yd" : device.objects.filter(health='Y').count(),
 
     }
     return render(request, "FireCheck/dashboard.html", context)
@@ -23,7 +29,28 @@ def device_list(request):
     context= {
         "devices" : device.objects.all()
     }
-    return render(request, "FireCheck/devicelist.html", context)
+    return render(request, "FireCheck/table.html", context)
+
+
+def red_device_list(request):
+    context= {
+        "devices" : device.objects.all().filter(health='R')
+    }
+    return render(request, "FireCheck/table.html", context)
+
+
+def green_device_list(request):
+    context= {
+        "devices" : device.objects.all().filter(health='G')
+    }
+    return render(request, "FireCheck/table.html", context)
+
+def yellow_device_list(request):
+    context= {
+        "devices" : device.objects.all().filter(health='Y')
+    }
+    return render(request, "FireCheck/table.html", context)
+
 
 def building_list(request):
     context= {

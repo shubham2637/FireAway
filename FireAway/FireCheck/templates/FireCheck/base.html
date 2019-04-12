@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static %}
   <meta charset="utf-8">
   <title>{% block title %}FireAway by Codevators{% endblock %}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fire by Codevators</title>
+  <!-- Bootstrap Styles-->
+  <link href={% static "/css/bootstrap.css" %} rel="stylesheet" />
+  <!-- FontAwesome Styles-->
+  <link href={% static "/css/font-awesome.css" %} rel="stylesheet" />
+  <!-- Morris Chart Styles-->
+  <link href={% static "/js/morris/morris-0.4.3.min.css" %} rel="stylesheet" />
+  <!-- Custom Styles-->
+  <link href={% static "/css/custom-styles.css" %} rel="stylesheet" />
+  <!-- Google Fonts-->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 <body>
+  <div id="wrapper">
+  <nav class="navbar navbar-default top-navbar" role="navigation">
+
+          <a class="navbar-brand" href="/"><i class="fa fa-fire"></i> <strong>FireAway</strong></a>
+
+      <ul class="nav navbar-top-links navbar-right">
+
+          <!-- /.dropdown -->
+
+          <!-- /.dropdown -->
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                  <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-user">
+
+                  <li><a href="/"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                  </li>
+              </ul>
+              <!-- /.dropdown-user -->
+          </li>
+          <!-- /.dropdown -->
+      </ul>
+  </nav>
+  <!--/. NAV TOP  -->
+  <div id="wrapper">
+    <div id="page-inner">
+      <div class="row">
   <main>
     {% block content %}
     {% endblock %}
   </main>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
