@@ -2,18 +2,18 @@ from django.shortcuts import render
 from django.shortcuts import Http404,HttpResponseRedirect
 from django.urls import reverse
 # Create your views here.
-#from .data import building_data
+from .data import building_data
 from .models import *
 from django.contrib.auth.models import User,Group
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth import authenticate, login, logout
 def create(request):
-    #building_data()
+    building_data()
     context= {
-        "buildings" : building.objects.all()
+        "devices" : device.objects.all()
     }
-    return render(request, "FireCheck/buildinglist.html", context)
+    return render(request, "FireCheck/devicelist.html", context)
 @login_required()
 def index(request):
     context = {
