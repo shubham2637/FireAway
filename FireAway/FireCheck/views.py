@@ -5,14 +5,16 @@ from django.urls import reverse
 #from .data import building_data
 from .models import *
 from django.contrib.auth.models import User,Group
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth import authenticate, login, logout
 def create(request):
     #building_data()
     context= {
         "buildings" : building.objects.all()
     }
     return render(request, "FireCheck/buildinglist.html", context)
-
+@login_required()
 def index(request):
     context = {
         "buildings" : building.objects.all(),
@@ -24,14 +26,14 @@ def index(request):
 
     }
     return render(request, "FireCheck/dashboard.html", context)
-
+@login_required()
 def device_details(request, did):
     context= {
         "d" : device.objects.get(pk=did)
     }
     return render(request, "FireCheck/device_details.html", context)
 
-
+@login_required()
 def zone_details(request, zid):
     zo=zone.objects.get(pk=zid)
     context= {
@@ -40,7 +42,7 @@ def zone_details(request, zid):
         "dc":device.objects.filter(zone=zo).count(),
     }
     return render(request, "FireCheck/zone_details.html", context)
-
+@login_required()
 def building_details(request, bid):
     bo=building.objects.get(pk=bid)
     context= {
@@ -53,7 +55,7 @@ def building_details(request, bid):
         "pc":panel.objects.filter(building=bo).count(),
     }
     return render(request, "FireCheck/building_details.html", context)
-
+@login_required()
 def panel_details(request, pid):
     po=panel.objects.get(pk=pid)
     context= {
@@ -67,64 +69,49 @@ def panel_details(request, pid):
 
 
 
-
+@login_required()
 def device_list(request):
     context= {
         "devices" : device.objects.all()
     }
     return render(request, "FireCheck/table.html", context)
 
+@login_required()
 def red_device_list(request):
     context= {
         "devices" : device.objects.all().filter(health='R')
     }
     return render(request, "FireCheck/table.html", context)
 
-
+@login_required()
 def green_device_list(request):
     context= {
         "devices" : device.objects.all().filter(health='G')
     }
     return render(request, "FireCheck/table.html", context)
 
+@login_required()
 def yellow_device_list(request):
     context= {
         "devices" : device.objects.all().filter(health='Y')
     }
     return render(request, "FireCheck/table.html", context)
 
-
+@login_required()
 def building_list(request):
     context= {
         "buildings" : building.objects.all()
     }
     return render(request, "FireCheck/buildinglist.html", context)
-
+@login_required()
 def zone_list(request):
     context= {
         "zones" : zone.objects.all()
     }
     return render(request, "FireCheck/zonelist.html", context)
-
+@login_required()
 def panel_list(request):
     context= {
         "panels" : panel.objects.all()
     }
     return render(request, "FireCheck/panellist.html", context)
-#def create_panel(return):
-#    if request.POST:
-#        accep = panel(request.POST['building'])
-
-#def login(request):
-     #username = request.POST['username']
-     #password = request.POST['password']
-     #user = authenticate(request, username=username, password=password)
-     #if user is not None:
-         #if login(request, user):
-                #context= {
-                #    "buildings" : building.objects.all()
-                #    }
-                #return render(request, "FireCheck/buildinglist.html", context)
-
-#     else:
-#return render(request, "FireCheck/login.html",{})
