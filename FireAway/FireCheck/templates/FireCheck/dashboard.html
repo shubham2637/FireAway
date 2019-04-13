@@ -48,8 +48,13 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-
-
+              {% if user.is_authenticated %}
+                <h1>Hi {{ user.name }}!</h1>
+                <p><a href="{% url 'logout' %}">logout</a></p>
+              {% else %}
+                <p>You are not logged in</p>
+                <a href="{% url 'login' %}">login</a>
+                {% endif %}
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
