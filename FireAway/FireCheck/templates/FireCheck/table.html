@@ -87,7 +87,13 @@
 
                                         <td><a href="/panel/{{d.panel.id}}">{{d.panel.id}}</a> </td>
                                         <td><a href="/building/{{d.building.id}}">{{d.building.name}}</a> </td>
-                                        <td>{{d.health}}</td>
+                                        {% if d.health == 'R' %}
+                                        <td style="background-color:red">{{d.health}}</td>
+                                        {% elif d.health == 'Y' %}
+                                        <td style="background-color:yellow">{{d.health}}</td>
+                                            {% else %}
+                                            <td style="background-color:green">{{d.health}}</td>
+                                        {% endif %}
 
                                     </tbody>
                                     {% endfor %}
