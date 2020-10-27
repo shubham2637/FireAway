@@ -1,4 +1,4 @@
-cryptography==2.2.2
+cryptography==3.2
 Django==2.1.7
 django-crispy-forms==1.7.2
 django-filter==2.1.0
