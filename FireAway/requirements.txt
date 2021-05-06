@@ -8,7 +8,7 @@ djangorestframework==3.9.2
 fcm-django==0.2.21
 filelock==3.0.4
 Flask==1.0.2
-Flask-Cors==3.0.4
+Flask-Cors==3.0.9
 jedi==0.13.3
 Jinja2==2.10
 jsonschema==2.6.0
