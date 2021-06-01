@@ -41,7 +41,7 @@ PyYAML==3.12
 Quandl==3.4.6
 requests==2.18.4
 requests-toolbelt==0.9.1
-urllib3==1.22
+urllib3==1.26.5
 wcwidth==0.1.7
 webencodings==0.5.1
 websocket==0.2.1
